@@ -1,0 +1,163 @@
+.nav> ul> li.current-menu-parent>a,
+.nav li.current-menu-item>a{
+    color:#1ab56b;
+}
+.content-box h6 {
+	font-size:20px;
+	margin-bottom:.6em;
+}
+p:empty{
+    margin: 0;
+}
+.widget_recent_entries ul li{
+    margin-bottom: 0.5rem;
+}
+.load-more-wrap.hide-load-more {
+    display: none;
+}
+.is-loading{
+    -webkit-animation-name: fadeInOut;
+    animation-name: fadeInOut;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    pointer-events: none;
+}
+.main--gray .content.fullwidth{
+    display: block;
+    max-width: 100%;
+    margin: 0;
+}
+@-webkit-keyframes fadeInOut {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+div.wpforms-container-full .wpforms-form button[type=submit] {
+    -webkit-transition: background .25s ease,border-color .25s ease,-webkit-box-shadow .25s ease;
+    -o-transition: background .25s ease,border-color .25s ease,box-shadow .25s ease;
+    transition: background .25s ease,border-color .25s ease,box-shadow .25s ease;
+    transition: background .25s ease,border-color .25s ease,box-shadow .25s ease,-webkit-box-shadow .25s ease;
+    height: calc(1.2rem + 1.8rem + 4px);
+    outline: 0;
+    border-style: solid;
+    -webkit-appearance: none;
+    cursor: pointer;
+    vertical-align: middle;
+    padding: .9rem 1.81rem;
+    font-size: 1.19rem;
+    font-weight: 700;
+    border-radius: .2rem;
+    border-width: 1px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: #fff;
+    background: -webkit-gradient(linear,left top,right top,from(#1ab56b),to(#2dc0bb));
+    background: -o-linear-gradient(left,#1ab56b 0%,#2dc0bb 100%);
+    background: linear-gradient(90deg,#1ab56b 0%,#2dc0bb 100%);
+    border-color: transparent;
+}
+div.wpforms-container-full .wpforms-form button[type=submit]:hover{
+    color: #1ab56b;
+    background: #fff;
+    border-color: #1ab56b;
+}
+div.wpforms-container-full .wpforms-form input[type=email],
+div.wpforms-container-full .wpforms-form input[type=text],
+div.wpforms-container-full .wpforms-form textarea{
+    padding: .9rem 1.25rem;
+    font-size: 1.063rem;
+    font-weight: 400;
+    border-radius: .2rem;
+    border-width: 1px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    display: block;
+    text-align: left;
+    -webkit-appearance: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline-color: transparent;
+    border-style: solid;
+    opacity: 1;
+    -webkit-transition: background .25s ease,border-color .25s ease,-webkit-box-shadow .25s ease;
+    -o-transition: background .25s ease,border-color .25s ease,box-shadow .25s ease;
+    transition: background .25s ease,border-color .25s ease,box-shadow .25s ease;
+    transition: background .25s ease,border-color .25s ease,box-shadow .25s ease,-webkit-box-shadow .25s ease;
+    height: calc(1.2rem + 1.8rem + 4px);
+}
+div.wpforms-container-full .wpforms-form textarea{
+    height: 188px !important;
+    resize: none;
+}
+div.wpforms-container-full .wpforms-form textarea:hover,
+div.wpforms-container-full .wpforms-form textarea:focus{
+    outline: 0;
+    border-color: #666;
+    -webkit-box-shadow: 0 0 2px 2px #666;
+    box-shadow: 0 0 2px 2px #666;
+}
+div.wpforms-container-full .wpforms-form .wpforms-field-label{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.31;
+}
+.commentlist .comment-meta{
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+.commentlist .comment-metadata{
+    position: static;
+}
+.subscription-box .with-mark strong {
+	background:0 0;
+	font-weight:800;
+	text-transform:uppercase;
+	color:inherit;
+}
+.widget_subsctibe .subscription-box .with-mark strong {
+    color: #1ab56b;
+}
+@media (max-width:768px) {
+	.content-box h6{
+		font-size:18px;
+	}
+}
+@media (max-width:375px) {
+	.content-box h6{
+		font-size:17px;
+	}
+}
