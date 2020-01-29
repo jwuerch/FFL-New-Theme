@@ -232,7 +232,7 @@ th {
 	-o-transition:color .25s ease,background .25s ease,opacity .25s ease,border-color .25s ease;
 	transition:color .25s ease,background .25s ease,opacity .25s ease,border-color .25s ease;
 	padding:.9rem 1.81rem;
-	font-size:1.12rem;
+	font-size:1.2rem;
 	border-radius:.2rem;
 	border-width:1px;
 	line-height:1.2;
@@ -1586,6 +1586,18 @@ label {
 	font-display:block;
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon2.eot?7c8eju');
+  src:  url('../fonts/icomoon2.eot?7c8eju#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon2.ttf?7c8eju') format('truetype'),
+    url('../fonts/icomoon2.woff?7c8eju') format('woff'),
+    url('../fonts/icomoon2.svg?7c8eju#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 .sub-arrow:after,
 .widget_archive ul li::after,
 .widget_categories ul li::after,
@@ -1639,6 +1651,19 @@ label {
 
 .icon-youtube:before {
 	content:"";
+}
+
+.icon-check-square-o:before {
+  content: "\f046";
+}
+.icon-money:before {
+  content: "\f0d6";
+}
+.icon-mobile:before {
+  content: "\f10b";
+}
+.icon-mobile-phone:before {
+  content: "\f10b";
 }
 
 .header {
@@ -2031,6 +2056,7 @@ label {
 	color:inherit;
 }
 
+
 .social-network-footer {
 	display:-webkit-box;
 	display:-ms-flexbox;
@@ -2115,6 +2141,14 @@ label {
 	table-layout:fixed;
 	height:100%;
 	margin:0 auto;
+}
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }
 
 .main {
@@ -2323,7 +2357,7 @@ label {
 	border-radius:.2rem;
 	padding:.25rem .5rem .125rem;
 	text-transform:uppercase;
-	font-size:.688rem;
+	font-size:.75rem;
 	letter-spacing:.18em;
 	font-weight:700;
 	color:#1d292b;
@@ -2455,10 +2489,11 @@ label {
     line-height: 1.3;
     border-top: 7px solid #1ab56b;
     max-width:100%;
-    padding:30px;
+    padding:30px 50px;
     padding-top:20px;
     padding-bottom:30px;
     box-shadow:0 1px 2px rgba(0,0,0,0.1);
+    max-width:405px;
 }
 
 .subscription-box .h {
@@ -2539,7 +2574,6 @@ label {
 }
 
 .description-block--lg .description-block_title {
-	font-size:1.5rem;
 	margin-bottom:.438rem;
 }
 
@@ -2805,6 +2839,7 @@ label {
 .widget_posts p {
 	margin:0 0 5px;
 	font-size:16px;
+	line-height:1.45;
 }
 
 .widget_posts .date {
@@ -2931,6 +2966,13 @@ label {
 	padding:3.375rem 0;
 }
 
+.courses i {
+	font-size:54px;
+}
+
+.courses i.icon-mobile {
+	font-size:74px;
+}
 .courses a {
 	color:#1d292b;
 }
@@ -3021,6 +3063,10 @@ label {
 
 .blogging-course .btn-wrap {
 	text-align:center;
+}
+
+.blogging-course .btn {
+	font-size:1.4rem;
 }
 
 .posts-block {
@@ -3201,6 +3247,28 @@ label {
 	color:#fff;
 }
 
+.subscribe-section:before {
+	top: 0;
+    left: 0;
+    border-bottom-right-radius: 10px;
+    width: 212px;
+    height: 115px;
+}
+.subscribe-section:after {
+	bottom: 0;
+    right: 0;
+    border-top-left-radius: 10px;
+    width: 778px;
+    height: 248px;
+}
+
+.subscribe-section:before, .subscribe-section:after {
+	content: "";
+    position: absolute;
+    z-index: -1;
+    background: rgba(0,0,0,.04);
+}
+
 .subscribe-section_col,
 .subscribe-section_columns {
 	display:-webkit-box;
@@ -3256,6 +3324,7 @@ label {
 
 .subscribe-section .subscription-box {
 	border-top:none;
+	padding-top:40px;
 }
 
 .top-section {
@@ -3651,7 +3720,6 @@ label {
 	    margin-left:4rem;
 	  }
 	  .subscription-box {
-	    max-width:365px;
 	    float:right;
 	  }
 	  .intro-blockquote .h {
@@ -3733,10 +3801,6 @@ label {
 @media (min-width:980px) {
 	.intro_col--form {
     	margin-left:-75px;
-  	}
-  	.subscription-box {
-    	padding:30px 50px;
-    	max-width:405px;
   	}
   	.intro-blockquote .h {
     	font-size:2.6em;
@@ -3955,6 +4019,14 @@ label {
 
 	.nav> ul> li> a {
 		border-top:1px solid rgba(153,153,153,.4);
+		font-size:18px;
+		color:;
+	}
+	.nav> ul> li:nth-child(5) > a, .nav> ul> li:nth-child(6) > a, .nav> ul> li:nth-child(7) > a {
+		color:#1d292b;
+	}
+	.nav> ul> li:nth-child(5):hover > a, .nav> ul> li:nth-child(6):hover > a, .nav> ul> li:nth-child(7):hover > a {
+		color:#1ab56b;
 	}
 
 	.nav> ul ul {
@@ -3986,6 +4058,11 @@ label {
 	.nav ul .search-opener
  	{
 		position:inherit;
+	}
+
+	.subscription-box {
+		max-width:375px;
+		padding:20px 40px;
 	}
 
 	.footer {
@@ -4115,15 +4192,6 @@ label {
 }
 
 @media (max-width:768px) {
-	.h5,
-	h5 {
-		font-size:17px;
-	}
-
-	.h6,
-	h6 {
-		font-size:16px;
-	}
 
 	.content-box .h6 {
 		font-size:18px;
@@ -4209,6 +4277,9 @@ label {
 	.hidden--s {
 		display:none!important;
 	}
+	.badge--lg {
+		font-size:1.2rem !important;
+	}
 
 	.navigation,
 	.navigation-comments,
@@ -4219,6 +4290,14 @@ label {
 	.navigation-single .next a,
 	.navigation-single .prev a {
 		padding:.2em;
+	}
+
+	.badge {
+		font-size:.888rem;
+	}
+
+	.subscribe-section_title {
+		font-size:3.6rem;
 	}
 	.subscription-box .h {
 		font-size:2.125rem;
@@ -4254,6 +4333,10 @@ label {
 
 	.social-network-header {
 		padding:10px 20px;
+	}
+
+	.home .main-title {
+		font-size:18px;
 	}
 
 	.footer_columns {
@@ -4351,6 +4434,10 @@ label {
 		font-size:2rem;
 	}
 
+	.subscribe-section_title {
+		font-size:3.5rem;
+	}
+
 	.top-section .container {
 		padding-top:0;
 	}
@@ -4377,9 +4464,6 @@ label {
 }
 
 @media (max-width:667px) {
-	.article {
-		padding-top:15px;
-	}
 
 	.article {
 		padding-bottom:20px;
@@ -4431,6 +4515,10 @@ label {
 		padding-right:0;
 	}
 
+	.blogging-course .btn {
+		font-size:1.6rem;
+	}
+
 	.header_panel {
 		padding:15px 40px 15px 0;
 	}
@@ -4446,12 +4534,19 @@ label {
 		font-size:2.45rem;
 	}
 
+	.subscription-box {
+		box-shadow:none;
+	}
+
 	.card p {
 		font-size:17px;
 	}
 
 	.card .btn {
 		font-size:1.5rem;
+	}
+	.blogging-course h1 {
+		font-size:42px;
 	}
 
 	.footer_upper {
@@ -4555,7 +4650,7 @@ label {
 		width:100%;
 	}
 	.subscribe-section_col:first-child {
-		padding:4rem 40px;
+		padding:7.25em 40px;
 	}
 
 	.subscribe-section_col:last-child {
@@ -4606,15 +4701,6 @@ label {
 }
 
 @media (max-width:375px) {
-	.h5,
-	h5 {
-		font-size:16px;
-	}
-
-	.h6,
-	h6 {
-		font-size:15px;
-	}
 
 	.product-thumb {
 		padding:5px;
@@ -4651,6 +4737,9 @@ label {
 		-webkit-box-pack:center;
 		-ms-flex-pack:center;
 		justify-content:center;
+	}
+	.description-block_meta {
+		font-size:1.1rem;
 	}
 
 	.meta-author {

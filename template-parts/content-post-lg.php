@@ -23,7 +23,7 @@
 			<strong class="description-block_tag"><a href="<?php echo get_term_link($categories[0]->term_id, $categories[0]->taxonomy); ?>"><?php echo $categories[0]->name; ?></a></strong>
 		<?php } ?>
 
-		<?php am_the_custom_title( [ 'tag' => 'h3', 'link' => true, 'class' => 'description-block_title' ] ); ?>
+		<?php am_the_custom_title( [ 'tag' => 'h3', 'link' => true, 'class' => 'description-block_title h5' ] ); ?>
 
 		<div class="description-block_meta">
 			<?php
