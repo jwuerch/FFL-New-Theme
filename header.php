@@ -16,7 +16,7 @@
 		<div class="w1">
 	
 
-			<header class="header">
+			<header id="header" class="header">
 				<div class="container">
 					<div class="header_wrap">
 						<div class="header_panel">

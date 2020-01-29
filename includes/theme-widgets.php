@@ -66,7 +66,7 @@ class am_WP_Widget_Popular extends WP_Widget {
 
 			<?php
 				$popular_articles_args = array(
-					'numberposts' => 6,
+					'numberposts' => 8,
 					'post_type'   => 'post',
 					'post_status'   => 'publish',
 					'meta_key'   => 'am_post_views_count',
@@ -90,10 +90,6 @@ class am_WP_Widget_Popular extends WP_Widget {
 
 								<div class="widget_posts_description">
 									<p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-
-									<?php if ($is_single){ ?>
-										<p><time class="date" datetime="<?php the_time('Y-m-d') ?>"><?php the_time(get_option('date_format')) ?></time></p>
-									<?php } ?>
 
 								</div>
 							</li></a>

@@ -18,6 +18,18 @@
             e.preventDefault();
             am_load_latest_posts();
         });
+
+        var position = $(window).scrollTop(); 
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+            if(scroll > position && window.scrollY > 125) {
+                
+                $('body').addClass('nav--down');
+            } else {
+                $('body').removeClass('nav--down');
+            }
+            position = scroll;
+        });
     });
 
 

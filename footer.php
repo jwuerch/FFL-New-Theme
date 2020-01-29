@@ -1,4 +1,4 @@
-		
+<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 <div class="subscribe-section">
 	<div class="container">
 		<div class="subscribe-section_columns">
@@ -17,7 +17,7 @@
 		</div>
 	</div>
 </div>
-</div><!-- End w1 -->
+</div>
 		<footer class="footer">
 			<div class="container">
 				<div class="footer_upper">
@@ -60,14 +60,17 @@
 						<?php endif; ?>
 
 						<div class="footer_col footer_col--lg">
-								<div class="get-involved">
-									<h6 class="h6">Join Our Community</h6>
-									<p>Connect with other readers for personal finance tips and tricks.</p>
-										<a href="https://www.facebook.com/frugalforless/" class="btn btn--default btn--green">Get Involved</a>
-									</div>
+							<div class="get-involved">
+								<h6 class="h6">Join Our Community</h6>
+								<p>Connect with other readers for personal finance tips and tricks.</p>
+									<a href="https://www.facebook.com/frugalforless/" class="btn btn--default btn--green">Get Involved</a>
 								</div>
+							</div>
 						</div>
 					</div>
+					<div class="footer_lower">
+					<p>© 2020 Frugal For Less. All rights reserved. The information on this website should not be take as a substitute for professional financial advice. Frugal For Less may be compensated when users click on links and sign-up with their associated offers located in content or anywhere else on the page. View our <a href="//www.frugalforless.com/privacy-policy">privacy policy</a> and our <a href="//www.frugalforless.com/privacy-policy">disclosure policy</a> for more information. FrugalForLess.com is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com.</p>
+				</div>
 				</div>
 			</div>
 		</footer>

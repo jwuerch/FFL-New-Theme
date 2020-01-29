@@ -16,7 +16,9 @@
 						$categories = wp_get_post_categories($post_id, ['fields' => 'all', 'orderby' => 'count']);
 						if ($categories){
 					?>
-						<span class="badge badge--green"><?php echo $categories[0]->name; ?></span>
+						<span class="badge badge--green">
+							<a href="<?php echo get_term_link($categories[0]->term_id, $categories[0]->taxonomy); ?>"><?php echo $categories[0]->name; ?></a>
+						</span>
 					<?php } ?>
 					
 					<?php am_the_custom_title( [ 'tag' => 'h1', 'class' => 'page-title' ] ); ?>
@@ -37,9 +39,6 @@
 					<div class="container container--lg">
 						<div class="content">
 							<div class="entry-wrap">
-								<div class="social-network-absolute visible--lg">
-									<?php am_social_networks_share(); ?>
-								</div>
 
 								<div class="meta-author">
 									<?php
@@ -52,6 +51,11 @@
 										<strong><?php the_author() ?></strong>
 										<strong><?php the_time(get_option('date_format')) ?></strong>
 									</div>
+								</div>
+								<div class="post-info">Disclosure: This page contains affiliate links and we may receive a commission through them, but this is at no additional cost to you. For more information, please read our <a href="//www.frugalforless.com/privacy-policy">privacy policy</a>.</div>
+								<div class="content-box extra-money"><h6>Want to Earn Some Extra Money?</h6><ul><li><strong>Survey Junkie:</strong>&nbsp;Earn up to $50 per survey with one of the highest-paying survey sites on the web.&nbsp;<a href="https://bmv.biz/?a=553&amp;c=1&amp;s1=MB-ohmconnect-review/" target="_blank" rel="noopener noreferrer">Join Survey Junkie Now</a></li><li><strong>Swagbucks:</strong>&nbsp;Make money watching videos, taking surveys, shopping online and more.&nbsp;<a href="https://swagbucks.7eer.net/c/300204/19503/799?sharedid=MB-ohmconnect-review/" target="_blank" rel="noopener noreferrer">Join Swagbucks Now &amp; Get a $5 Bonus </a></li><li><strong>LifePoints:</strong>&nbsp;Quickly becomming one of the best survey sites out there. Earn up to $10 per survey in a short time. <a href="http://www.anrdoezrs.net/click-7590917-13689525?sid=MB-ohmconnect-review/" target="_blank" rel="noopener noreferrer">Join LifePoints Now For a 10 Point Bonus</a></li><li><strong>MobileXpression:</strong>&nbsp;Earn free money (passive income) just by leaving an app installed on your phone.&nbsp;<a href="https://www.bigcattracks.com/aff_c?offer_id=140&amp;aff_id=10816&amp;aff_sub=MB-ohmconnect-review/" target="_blank" rel="noopener noreferrer">Join MobileXpression Now &amp; Get a Free Gift Card in One Week</a></li></ul></div>
+								<div class="social-network-absolute">
+									<?php am_social_networks_share(); ?>
 								</div>
 								
 								<?php the_content(__('Read more', 'am')); ?>
@@ -125,9 +129,6 @@
 						?>
 						
 					</div>
-				</div>
-				<div class="social-network-absolute hidden--lg">
-					<?php am_social_networks_share(); ?>
 				</div>
 			</main>
 
