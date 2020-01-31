@@ -1103,13 +1103,118 @@ function load_template_part($template_name, $part_name = null) {
 }
 
 /**
+ * Add SVG support
+ */
+
+function am_mime_types($mimes) {
+	$mimes['svg'] = 'image/svg+xml';
+	$mimes['svgz'] = 'image/svg+xml';
+	return $mimes;
+}
+
+/**
+ * Add SVG support - CSS part
+ */
+
+function am_svg_thumb_display() {
+	echo '<style>
+	td.media-icon img[src$=".svg"], img[src$=".svg"].attachment-post-thumbnail { 
+	 width: 100% !important; 
+	 height: auto !important; 
+	}
+	</style>';
+}
+
+/**
+ * Add Demo Role for security
+ */
+
+function am_demo_role(){
+    global $wp_roles;
+    if ( ! isset( $wp_roles ) )
+        $wp_roles = new WP_Roles();
+
+    $role_admin = $wp_roles->get_role('administrator');
+    //Adding a 'new_role' with all admin caps
+    $wp_roles->add_role('demo', __('Demo','am'), $role_admin->capabilities);
+    
+    $role = get_role( 'demo' );
+    $role->remove_cap( 'edit_themes' );
+    $role->remove_cap( 'export' );
+    $role->remove_cap( 'list_users' );
+    $role->remove_cap( 'promote_users' );
+    $role->remove_cap( 'switch_themes' );
+    $role->remove_cap( 'remove_users' );
+    $role->remove_cap( 'delete_themes' );
+    $role->remove_cap( 'delete_plugins' );
+    $role->remove_cap( 'edit_plugins' );
+    $role->remove_cap( 'edit_users' );
+    $role->remove_cap( 'create_users' );
+    $role->remove_cap( 'delete_users' );
+    $role->remove_cap( 'install_themes' );
+    $role->remove_cap( 'install_plugins' );
+    $role->remove_cap( 'activate_plugins' );
+    $role->remove_cap( 'update_plugin' );
+    $role->remove_cap( 'update_themes' );
+    $role->remove_cap( 'update_core' );
+}
+
+/**
+ * Change admin logo url
+ */
+
+function am_login_logo_url() {
+    return home_url('/');
+}
+
+
+// Add Google Map API
+
+function am_acf_google_map_key() {
+	$key = get_field('google_map_api', 'option');
+	if($key)
+    	acf_update_setting('google_api_key', $key);
+}
+add_action('acf/init', 'am_acf_google_map_key');
+
+
+/**
+* This function prints custom code to <head>.
+*/
+add_action( 'wp_head', 'am_custom_header_code', 999 );
+function am_custom_header_code(){
+    $custom_code = get_field( 'custom_code_header', 'options' );
+    if( $custom_code !== '' ){
+        print $custom_code;
+    }
+}
+
+
+/**
+* This function prints custom code before closing </body>.
+*/
+
+add_action( 'wp_footer', 'am_custom_footer_code', 999 );
+function am_custom_footer_code(){
+    $custom_code = get_field( 'custom_code_footer', 'options' );
+    if( $custom_code !== '' ){
+        print $custom_code;
+    }
+}
+
+/**
  * Theme calls
 */
 
 add_filter('the_title','am_has_title');
 add_filter('excerpt_more', 'am_excerpt_more');
+add_action( 'login_headerurl', 'am_login_logo_url' );
 add_filter( 'comment_form_fields', 'am_move_comment_field_to_bottom' );
+add_filter('upload_mimes', 'am_mime_types');
+add_action('admin_head', 'am_svg_thumb_display');
 
+// create demo user which can not install plugins and themes
+add_action('init', 'am_demo_role');
 
 //disable emoji
 remove_action('wp_head', 'print_emoji_detection_script', 7);

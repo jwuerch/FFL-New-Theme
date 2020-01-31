@@ -1,10 +1,10 @@
 <?php
     function am_social_networks(){
         ?>
-            <?php am_the_field('social_facebook_url', '<li><a href="', '" target="blank">'.__('Facebook','am').'<i class="icon-facebook"></i></a></li>', 'option', 'url'); ?>
-            <?php am_the_field('social_twitter_url', '<li><a href="', '" target="blank">'.__('Twitter','am').'<i class="icon-twitter"></i></a></li>', 'option', 'url'); ?>
-            <?php am_the_field('social_pinterest_url', '<li><a href="', '" target="blank">'.__('Pinterest','am').'<i class="icon-pinterest"></i></a></li>', 'option', 'url'); ?>
-            <?php am_the_field('social_youtube_url', '<li><a href="', '" target="blank">'.__('YouTube','am').'<i class="icon-youtube"></i></a></li>', 'option', 'url'); ?>  
+            <li><a href="https://www.facebook.com/frugalforless" target="blank"><i class="icon-facebook"></i></a></li>
+            <li><a href="https://www.twitter.com/frugalforless" target="blank"><i class="icon-twitter"></i></a></li>
+            <li><a href="https://www.pinterest.com/frugalforless" target="blank"><i class="icon-pinterest"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UC22CPuu0tBl5A5KXkHnPF0g" target="blank"><i class="icon-youtube"></i></a></li>
         <?php
     }
     function am_social_networks_share(){
@@ -122,9 +122,9 @@
     }
 
     add_action("wp_ajax_am_load_more", "am_load_more");
-	add_action("wp_ajax_nopriv_am_load_more", "am_load_more");
+    add_action("wp_ajax_nopriv_am_load_more", "am_load_more");
 
-	function am_load_more() {
+    function am_load_more() {
         $post_content = '';
         
         $current_page = (int) $_POST["page"];
@@ -150,37 +150,37 @@
         if ($_POST["category"] != 'all'){
             $args['category_name'] = $_POST['category'];
         }
-		
-		query_posts($args);
-		$post_content = '';
+        
+        query_posts($args);
+        $post_content = '';
         $show_button = false;
         $counter = 1;
         global $wp_query;
-		if (have_posts()) :
+        if (have_posts()) :
             while (have_posts()) : the_post();
                 $filename = $current_page == 1 && $counter == 1? 'lg' : 'md';
                 $post_content .= load_template_part('template-parts/content', 'post-'.$filename);
                 $counter++;
             endwhile;
         else :
-			$post_content .= load_template_part('template-parts/content', 'none-md');
+            $post_content .= load_template_part('template-parts/content', 'none-md');
         endif;
         if ($wp_query->max_num_pages > $current_page) :
-			$show_button = true;
-		endif;
-		wp_reset_query();
-		
-		
-		$response['post'] = $post_content;
-		$response['button'] = $show_button;
-		echo json_encode($response);
-		die();
-	}
+            $show_button = true;
+        endif;
+        wp_reset_query();
+        
+        
+        $response['post'] = $post_content;
+        $response['button'] = $show_button;
+        echo json_encode($response);
+        die();
+    }
 
     add_action("wp_ajax_am_load_more_latest", "am_load_more_latest");
-	add_action("wp_ajax_nopriv_am_load_more_latest", "am_load_more_latest");
+    add_action("wp_ajax_nopriv_am_load_more_latest", "am_load_more_latest");
 
-	function am_load_more_latest() {
+    function am_load_more_latest() {
         $post_content = '';
         
         $current_page = (int) $_POST["page"];
@@ -195,28 +195,28 @@
             'orderby' => 'date',
             'order' => 'DESC',
         );
-		
-		query_posts($args);
-		$post_content = '';
+        
+        query_posts($args);
+        $post_content = '';
         $show_button = false;
         global $wp_query;
-		if (have_posts()) :
+        if (have_posts()) :
             while (have_posts()) : the_post();
                 $post_content .= load_template_part('template-parts/content', 'post');
             endwhile;
         else :
-			$post_content .= load_template_part('template-parts/content', 'none-md');
+            $post_content .= load_template_part('template-parts/content', 'none-md');
         endif;
         if ($wp_query->max_num_pages > $current_page) :
-			$show_button = true;
-		endif;
-		wp_reset_query();
-		
-		
-		$response['post'] = $post_content;
-		$response['button'] = $show_button;
-		echo json_encode($response);
-		die();
+            $show_button = true;
+        endif;
+        wp_reset_query();
+        
+        
+        $response['post'] = $post_content;
+        $response['button'] = $show_button;
+        echo json_encode($response);
+        die();
     }
     
     add_filter( 'big_image_size_threshold', 'am_big_image', 10, 1 );

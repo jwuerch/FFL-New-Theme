@@ -94,13 +94,13 @@ function am_add_css_and_js( ) {
 	wp_enqueue_script('jquery');
 	
 	// internal js
-	$am_js_files = array('assets/js/jquery.main.js','assets/js/general.js'); // example: array('script1', 'script2');
+	$am_js_files = array('assets/js/jquery.main.js'); // example: array('script1', 'script2');
 	
 	// external js
 	$am_js_external_files = array(); // example: array('https://maps.googleapis.com/maps/api/js');
 	
 	// internal CSS
-	$am_css_files = array('assets/css/style.css', 'assets/css/style-wp.css'); // example: array('style1', 'style2');
+	$am_css_files = array('assets/css/style.css'); // example: array('style1', 'style2');
 	
 	// external CSS
 	$am_css_external_links = array('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,600,700,700i,800&display=swap'); // example: array('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
